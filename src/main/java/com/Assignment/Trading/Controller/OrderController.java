@@ -1,8 +1,6 @@
 package com.Assignment.Trading.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,16 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Assignment.Trading.DTO.OrderRequest;
 import com.Assignment.Trading.ServiceImpl.OrderServiceImpl;
 
-import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/orders")
-@RequiredArgsConstructor
-@Slf4j
 public class OrderController {
+	@Autowired
 	private  OrderServiceImpl orderServiceImpl;
 	
 	@PostMapping
@@ -31,13 +25,13 @@ public class OrderController {
 		return("Order placed successfully");
 	}
 	
-	@PostMapping("{/orderId}/fill")
-	public String fillOrder(@PathVariable Long oderId) {
-		orderServiceImpl.fillOrder(oderId);
+	@PostMapping("/{orderId}/fill")
+	public String fillOrder(@PathVariable Long orderId) {
+		orderServiceImpl.fillOrder(orderId);
 		return "Order Filled Succesfully";
 	}
 	
-	@PostMapping("{orderId/cancel}")
+	@PostMapping("/{orderId}/cancel")
 	public String cancelOrder(@PathVariable Long orderId)
 	{
 		orderServiceImpl.cancelOrder(orderId);
