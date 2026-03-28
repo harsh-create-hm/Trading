@@ -30,6 +30,7 @@ public class OrderRequest {
 	@NotNull
 	private OrderSide side;
 
+
 	public String getTraderId() {
 		return traderId;
 	}
@@ -70,6 +71,17 @@ public class OrderRequest {
 		this.side = side;
 	}
 	
+	
+	public OrderRequest(@NotBlank String traderId, @NotBlank String stock, @NotBlank String sector,
+			@Min(1) int quantity, @NotNull OrderSide side) {
+		super();
+		this.traderId = traderId;
+		this.stock = stock;
+		this.sector = sector;
+		this.quantity = quantity;
+		this.side = side;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderRequest [traderId=" + traderId + ", stock=" + stock + ", sector=" + sector + ", quantity="
