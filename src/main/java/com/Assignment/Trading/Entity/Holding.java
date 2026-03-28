@@ -8,15 +8,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import lombok.Data;
 
 @Entity
-@Data
 @Table(name = "holdings",
        uniqueConstraints = @UniqueConstraint(columnNames = {"portfolio_id", "stock"}))
 public class Holding {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
