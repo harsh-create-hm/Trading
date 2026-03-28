@@ -3,6 +3,42 @@
 A comprehensive guide for testing the Trading API with detailed endpoints, SQL queries, and edge case scenarios.
 Download zip file and Import Project as existing maven project or Clone the reposiory 
 and run the Service and setUp the h2 console.
+
+## Design Decisions
+
+1. **Layered Architecture**
+   Used Controller → Service → Repository structure for clean separation of concerns.
+
+2. **Separate Tables (Orders, Portfolio, Holdings)**
+   Orders store history, Holdings store current state, Portfolio represents the trader.
+
+3. **Holdings as Snapshot**
+   Holdings stores the latest stock quantity for quick access.
+
+4. **Business Logic in Service Layer**
+   Keeps controllers simple and centralizes logic in services.
+
+5. **DTO Usage**
+   Prevents exposing internal entities and keeps API flexible.
+
+6. **Transaction Management**
+   Used `@Transactional` to ensure atomic operations and data consistency.
+
+7. **Concurrency Handling**
+   Applied pessimistic locking during stock updates to prevent overselling.
+
+8. **Read vs Write Separation**
+   Locking is used only for write operations, not for read/validation.
+
+9. **Validation**
+   Used annotations to ensure valid input and avoid runtime errors.
+
+10. **Separate Overlap Service**
+    Kept overlap logic independent as it is pure business computation.
+
+11. **Service Interface & Implementation (OOP)**
+    Used interfaces and implementations to follow abstraction and loose coupling.
+
 ## H2 Console Access
 
 Access the in-memory database console on browser for real-time verification.
