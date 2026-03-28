@@ -19,7 +19,6 @@ import lombok.Data;
 
 
 @Entity
-@Data
 @Table(name="orders")
 public class Order {
 	
