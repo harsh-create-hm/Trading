@@ -1,4 +1,4 @@
-# Trading API - Test Documentation
+# Trading API - Documentation
 
 A comprehensive guide for testing the Trading API with detailed endpoints, SQL queries, and edge case scenarios.
 Download zip file and Import Project as existing maven project or Clone the reposiory 
