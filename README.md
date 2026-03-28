@@ -1,7 +1,8 @@
 # Trading API - Test Documentation
 
 A comprehensive guide for testing the Trading API with detailed endpoints, SQL queries, and edge case scenarios.
-
+Download zip file and Import Project as existing maven project or Clone the reposiory 
+and run the Service and setUp the h2 console.
 ## H2 Console Access
 
 Access the in-memory database console on browser for real-time verification.
