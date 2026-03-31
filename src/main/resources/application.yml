@@ -16,3 +16,10 @@ spring:
   h2:
     console:
       enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.Assignment.Trading: DEBUG
+  file:
+    name: logs/app.log
