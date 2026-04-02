@@ -1,0 +1,5 @@
+2026-04-02T09:41:12.411Z  INFO 4357 --- [Trading] [main] c.A.Trading.TradingApplicationTests      : Starting TradingApplicationTests using Java 17.0.18 with PID 4357 (started by runner in /home/runner/work/Trading/Trading)
+2026-04-02T09:41:12.413Z DEBUG 4357 --- [Trading] [main] c.A.Trading.TradingApplicationTests      : Running with Spring Boot v3.5.13, Spring v6.2.17
+2026-04-02T09:41:12.413Z  INFO 4357 --- [Trading] [main] c.A.Trading.TradingApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2026-04-02T09:41:15.379Z  WARN 4357 --- [Trading] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-02T09:41:15.706Z  INFO 4357 --- [Trading] [main] c.A.Trading.TradingApplicationTests      : Started TradingApplicationTests in 3.689 seconds (process running for 4.519)
