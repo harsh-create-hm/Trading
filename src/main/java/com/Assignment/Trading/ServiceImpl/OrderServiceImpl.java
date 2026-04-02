@@ -22,12 +22,15 @@ public class OrderServiceImpl implements OrderService {
     private  OrderRepository orderRepository;
 	@Autowired
     private  PortfolioService portfolioService;
-
+	
+	@Transactional
     @Override
     public void placeOrder(OrderRequest request) {
-
+    	
+    	
         long count = orderRepository.countByTraderIdAndStatus(
                request.getTraderId(), OrderStatus.PENDING);
+    	orderRepository.lockOrdersByTrader(request.getTraderId());
 
         if (count >= 3) {
             throw new BusinessException("Max 3 pending orders allowed");
